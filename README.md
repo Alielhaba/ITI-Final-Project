@@ -1,5 +1,5 @@
 # $${\color{red} ITI-Final-Project}$$
-## About the project:
+> *About the project:
 *Project for deploying  first by build the infrastructure by *Terraform* using GCP which consist of
 - GKE Cluster
 - VPC
@@ -14,15 +14,16 @@
 
 ![Demo](https://user-images.githubusercontent.com/118537759/220793624-86bbcd94-6980-4246-94af-476424471fbe.jpg)
 
+###                ______________________________________________________________________________________________
 
-# *Requires to Start Project*
+# *The Requirement to Start Project*
 
 ""IN YOUR LOCAL MACHINE""
 - Install Terraform
 - Install Docker
 
-# First
->*Build docker image (Slave-image) from docker file*  - Push the image to Docker Hub
+> *First
+# *Build docker image (Slave-image) from docker file*  - Push the image to Docker Hub
 
 
 * Build the Docker image  (Slave-image)
@@ -50,8 +51,12 @@ docker push ali3elhabal/slave:latest
 *Docker Hub Account*
 ![Screenshot from 2023-02-22 13-41-07](https://user-images.githubusercontent.com/118537759/220793790-69ba465b-779e-4178-a1f6-f7960ebc2e2c.png)
 
-#Second
->*Run Terraform Files Using This Commands*
+
+###                ______________________________________________________________________________________________
+
+
+>*Second
+# *Run Terraform Files Using This Commands*
 ```
 terraform init 
 ```
@@ -66,11 +71,17 @@ terraform plan
 terraform apply  
 ```
 ![Screenshot from 2023-02-23 13-37-58](https://user-images.githubusercontent.com/118537759/220967030-8bdc8403-bc06-4c93-8432-eccbcb6b2ef8.png)
-## -------------------------------------------
- ![Screenshot from 2023-02-23 13-38-19](https://user-images.githubusercontent.com/118537759/220967077-4e26c22a-857a-4505-b0e1-48558e0fc3f4.png)
 
-# Third
->*SSH to controller-vm and follow this steps
+## -------------------------------------------
+
+![Screenshot from 2023-02-23 13-38-19](https://user-images.githubusercontent.com/118537759/220967077-4e26c22a-857a-4505-b0e1-48558e0fc3f4.png)
+
+
+###                ______________________________________________________________________________________________
+
+
+>*Third
+# *SSH to controller-vm and follow this steps
 
 * installing git
 ```
@@ -116,7 +127,9 @@ kubectl create -f deployment-files
 kubectl get svc
 ```
 ![Screenshot from 2023-02-23 14-20-14](https://user-images.githubusercontent.com/118537759/220968906-1dfaf1a1-3b35-4dea-ab4d-1f300afcd48d.png)
-##----------------------------------------------------------
+
+##   ----------------------------------------------------------
+
 ![Screenshot from 2023-02-23 14-20-48](https://user-images.githubusercontent.com/118537759/220969280-a600bc76-5a0c-4eb9-aa87-90b700796ee7.png)
 
 * Get a shell from jenkins pod to get Administrator Password
@@ -124,27 +137,42 @@ kubectl get svc
 kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 ```
 ![Screenshot from 2023-02-23 14-23-29](https://user-images.githubusercontent.com/118537759/220969325-b5569d85-98cb-48e8-95e2-cace0e732ae7.png)
-## -------------------------------------------
+
+##   ----------------------------------------------------------
+
 ![Screenshot from 2023-02-23 14-24-13](https://user-images.githubusercontent.com/118537759/220969430-4895ae20-3326-4ff0-b8de-ed3377f289dd.png)
-## -------------------------------------------
+
+##   ----------------------------------------------------------
+
 ![Screenshot from 2023-02-23 14-26-18](https://user-images.githubusercontent.com/118537759/220969548-dd8d4988-d974-45ad-866c-fc1381645d53.png)
 
 
+###                ______________________________________________________________________________________________
+
+
 >*create slave node in jenkins and connect it with slave pod in GKE Cluster
+
 ![Screenshot from 2023-02-23 14-40-14](https://user-images.githubusercontent.com/118537759/220974355-099bca85-ccd7-43c8-9b99-a364117a8d2d.png)
-#  -------------------
-# Make sure ssh Connection in slave pod is started 
-# And Authentication is required 
-   * create Credential with user-name (Jenkins) and password
-   * go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
+
+##   ----------------------------------------------------------
+
+*Make sure ssh Connection in slave pod is started 
+*And Authentication is required 
+   -create Credential with user-name (Jenkins) and password
+   -go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
+   
 ![Screenshot from 2023-02-23 14-40-41](https://user-images.githubusercontent.com/118537759/220974426-c28ed4ca-17a3-4e62-9eb5-63e491817c8f.png)
 
-# craete pipline with this configuration only 
+>*craete pipline with this configuration only 
+
 ![Screenshot from 2023-02-23 18-58-05](https://user-images.githubusercontent.com/118537759/220976981-3e23cb62-bde4-4c6f-bc40-7325cf7a7bad.png)
-# -----------------------------------------
+
+##   ----------------------------------------------------------
+
 ![Screenshot from 2023-02-23 18-58-22](https://user-images.githubusercontent.com/118537759/220977064-2c22f51c-ea09-4a18-83be-0ebdbd4c6a00.png)
 
-# then build the pipline 
+*then build the pipline 
+
 ![Screenshot from 2023-02-23 18-13-59](https://user-images.githubusercontent.com/118537759/220977498-8d4d70f0-6c7f-4b0a-86d8-8039e6787832.png)
 
 
