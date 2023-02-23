@@ -49,9 +49,27 @@ docker push ali3elhabal/slave:latest
 *Docker Hub Account*
 ![Screenshot from 2023-02-22 13-41-07](https://user-images.githubusercontent.com/118537759/220793790-69ba465b-779e-4178-a1f6-f7960ebc2e2c.png)
 
+#Second
+>*Run Terraform Files Using This Commands*
+```
+terraform init 
+```
+![Screenshot from 2023-02-23 13-18-50](https://user-images.githubusercontent.com/118537759/220966939-11e58006-227f-4d9e-a59b-f2bf0829dab9.png)
+
+```
+terraform plan  
+```
+![Screenshot from 2023-02-23 13-22-41](https://user-images.githubusercontent.com/118537759/220966992-e84a39fc-278f-4d17-a330-d702f081ca9a.png)
+
+```
+terraform apply  
+```
+![Screenshot from 2023-02-23 13-37-58](https://user-images.githubusercontent.com/118537759/220967030-8bdc8403-bc06-4c93-8432-eccbcb6b2ef8.png)
+##-------------------------------------------
+ ![Screenshot from 2023-02-23 13-38-19](https://user-images.githubusercontent.com/118537759/220967077-4e26c22a-857a-4505-b0e1-48558e0fc3f4.png)
 
 # Third
->*SSH to private-vm and follow this steps
+>*SSH to controller-vm and follow this steps
 
 * installing git
 ```
@@ -60,37 +78,55 @@ sudo apt update
 ```
 sudo apt install git  
 ```
+![Screenshot from 2023-02-23 13-47-10](https://user-images.githubusercontent.com/118537759/220967993-e6e183e7-8484-4fb0-b1d9-a9f76666a3f0.png)
+
+* Get deployment files (yaml-files) and Spec.Script.sh from my repo 
+```
+git clone git@github.com:Alielhaba/ITI-Final-Project.git
+```
+![Screenshot from 2023-02-23 13-50-33 (copy)](https://user-images.githubusercontent.com/118537759/220968239-07c97cfa-e12e-43d7-853b-7ad2bc37dafe.png)
+
 * Run Spec.Script.sh
 ```
 bash Spec.Script.sh
 ```
-
-* Get deployment files (yaml-files) from my repo 
-```
-git clone git@github.com:Alielhaba/ITI-Final-Project.git
-```
+![Screenshot from 2023-02-23 13-55-46](https://user-images.githubusercontent.com/118537759/220968619-86b9b02c-2c03-48e7-83c9-b2436f24036a.png)
 
 * Connect Controller VM to  GKE Cluster 
 ```
 gcloud container clusters get-credentials main-cluster --zone us-east1-b --project ali-elhabal-378620
 ```
+![Screenshot from 2023-02-23 14-03-27](https://user-images.githubusercontent.com/118537759/220968725-4dfb5df1-2939-44a8-8b95-3df0616cd946.png)
+
 * Create Jenkins NameSpace
 ```
 kubectl create  namespace jenkins
 ```
+![Screenshot from 2023-02-23 14-12-17](https://user-images.githubusercontent.com/118537759/220968801-8006d895-400c-4e5c-a087-d02faccc8abc.png)
+
 * Deploy jenkins and slave files 
 ```
 kubectl create -f deployment-files
 ```
+![Screenshot from 2023-02-23 14-12-17](https://user-images.githubusercontent.com/118537759/220968835-c42b8b54-73f2-4050-ad6c-9889cc480469.png)
 
 * Get service IP and Port to brows jenkins
 ```
 kubectl get svc
 ```
+![Screenshot from 2023-02-23 14-20-14](https://user-images.githubusercontent.com/118537759/220968906-1dfaf1a1-3b35-4dea-ab4d-1f300afcd48d.png)
+##----------------------------------------------------------
+![Screenshot from 2023-02-23 14-20-48](https://user-images.githubusercontent.com/118537759/220969280-a600bc76-5a0c-4eb9-aa87-90b700796ee7.png)
+
 * Get a shell from jenkins pod to get Administrator Password
 ```
 kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 ```
+![Screenshot from 2023-02-23 14-23-29](https://user-images.githubusercontent.com/118537759/220969325-b5569d85-98cb-48e8-95e2-cace0e732ae7.png)
+##-------------------------------------------
+![Screenshot from 2023-02-23 14-24-13](https://user-images.githubusercontent.com/118537759/220969430-4895ae20-3326-4ff0-b8de-ed3377f289dd.png)
+##-------------------------------------------
+![Screenshot from 2023-02-23 14-26-18](https://user-images.githubusercontent.com/118537759/220969548-dd8d4988-d974-45ad-866c-fc1381645d53.png)
 
 # $${\color{green}Thank You}$$
 
