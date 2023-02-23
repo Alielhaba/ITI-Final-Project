@@ -22,7 +22,7 @@
 - Install Terraform
 - Install Docker
 
-# *First
+# First
 > Build docker image (Slave-image) from docker file*  - Push the image to Docker Hub
 
 
@@ -156,10 +156,10 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 
 ##   ----------------------------------------------------------
 
-> Make sure ssh Connection in slave pod is started 
-> And Authentication is required 
-   >> create Credential with user-name (Jenkins) and password
-   >> go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
+> *Make sure ssh Connection in slave pod is started 
+> *And Authentication is required 
+   >> *create Credential with user-name (Jenkins) and password
+   >> *go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
    
 ![Screenshot from 2023-02-23 14-40-41](https://user-images.githubusercontent.com/118537759/220974426-c28ed4ca-17a3-4e62-9eb5-63e491817c8f.png)
 
@@ -186,7 +186,7 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 
 ![Screenshot from 2023-02-23 19-39-34](https://user-images.githubusercontent.com/118537759/220987058-48327681-22cf-42f3-844b-a8d33b109fd1.png)
 
-# The Deployed App 
+* The Deployed App 
 
 ![Screenshot from 2023-02-23 18-12-58](https://user-images.githubusercontent.com/118537759/220987261-82bd2d46-b260-4590-815d-34f08e71f1dd.png)
 
