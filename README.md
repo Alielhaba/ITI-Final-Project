@@ -44,7 +44,8 @@ docker login
 ```
 docker push ali3elhabal/slave:latest
 ```
-![Screenshot from 2023-02-22 13-40-26](https://user-images.githubusercontent.com/118537759/220793779-546f8de8-af43-42d4-bd79-477581f57209.png)#
+![Screenshot from 2023-02-22 13-40-26](https://user-images.githubusercontent.com/118537759/220793779-546f8de8-af43-42d4-bd79-477581f57209.png)
+
 
 *Docker Hub Account*
 ![Screenshot from 2023-02-22 13-41-07](https://user-images.githubusercontent.com/118537759/220793790-69ba465b-779e-4178-a1f6-f7960ebc2e2c.png)
@@ -65,7 +66,7 @@ terraform plan
 terraform apply  
 ```
 ![Screenshot from 2023-02-23 13-37-58](https://user-images.githubusercontent.com/118537759/220967030-8bdc8403-bc06-4c93-8432-eccbcb6b2ef8.png)
-##-------------------------------------------
+## -------------------------------------------
  ![Screenshot from 2023-02-23 13-38-19](https://user-images.githubusercontent.com/118537759/220967077-4e26c22a-857a-4505-b0e1-48558e0fc3f4.png)
 
 # Third
@@ -123,10 +124,34 @@ kubectl get svc
 kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 ```
 ![Screenshot from 2023-02-23 14-23-29](https://user-images.githubusercontent.com/118537759/220969325-b5569d85-98cb-48e8-95e2-cace0e732ae7.png)
-##-------------------------------------------
+## -------------------------------------------
 ![Screenshot from 2023-02-23 14-24-13](https://user-images.githubusercontent.com/118537759/220969430-4895ae20-3326-4ff0-b8de-ed3377f289dd.png)
-##-------------------------------------------
+## -------------------------------------------
 ![Screenshot from 2023-02-23 14-26-18](https://user-images.githubusercontent.com/118537759/220969548-dd8d4988-d974-45ad-866c-fc1381645d53.png)
+
+
+>*create slave node in jenkins and connect it with slave pod in GKE Cluster
+![Screenshot from 2023-02-23 14-40-14](https://user-images.githubusercontent.com/118537759/220974355-099bca85-ccd7-43c8-9b99-a364117a8d2d.png)
+#  -------------------
+# Make sure ssh Connection in slave pod is started 
+# And Authentication is required 
+   * create Credential with user-name (Jenkins) and password
+   * go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
+![Screenshot from 2023-02-23 14-40-41](https://user-images.githubusercontent.com/118537759/220974426-c28ed4ca-17a3-4e62-9eb5-63e491817c8f.png)
+
+# craete pipline with this configuration only 
+![Screenshot from 2023-02-23 18-58-05](https://user-images.githubusercontent.com/118537759/220976981-3e23cb62-bde4-4c6f-bc40-7325cf7a7bad.png)
+# -----------------------------------------
+![Screenshot from 2023-02-23 18-58-22](https://user-images.githubusercontent.com/118537759/220977064-2c22f51c-ea09-4a18-83be-0ebdbd4c6a00.png)
+
+# then build the pipline 
+![Screenshot from 2023-02-23 18-13-59](https://user-images.githubusercontent.com/118537759/220977498-8d4d70f0-6c7f-4b0a-86d8-8039e6787832.png)
+
+
+
+
+
+
 
 # $${\color{green}Thank You}$$
 
