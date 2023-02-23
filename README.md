@@ -6,8 +6,8 @@
 - VPC
 - 2 Subnets 
 - 1 VM
-* Deploy jenkins in GKE Cluster using Controller VM *
-*Use jenkins to build and deploy this app in slave pod in GKE cluster* 
+- Deploy jenkins in GKE Cluster using Controller VM 
+- Use jenkins to build and deploy this app in slave pod in GKE cluster
 
 ###                    ______________________________________________________________________________________________
 
