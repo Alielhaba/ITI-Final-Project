@@ -1,5 +1,6 @@
 # $${\color{red} ITI-Final-Project}$$
-> *About the project:
+> About the project:
+
 *Project for deploying  first by build the infrastructure by *Terraform* using GCP which consist of
 - GKE Cluster
 - VPC
