@@ -156,10 +156,10 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 
 ##   ----------------------------------------------------------
 
-> *Make sure ssh Connection in slave pod is started 
->> *And Authentication is required 
-   >>> *create Credential with user-name (Jenkins) and password
-   >>>> *go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
+> Make sure ssh Connection in slave pod is started 
+>> And Authentication is required 
+   >>> create Credential with user-name (Jenkins) and password
+   >>>> go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
    
 ![Screenshot from 2023-02-23 14-40-41](https://user-images.githubusercontent.com/118537759/220974426-c28ed4ca-17a3-4e62-9eb5-63e491817c8f.png)
 
