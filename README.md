@@ -8,7 +8,7 @@
 * Deploy jenkins in GKE Cluster using Controller VM *
 *Use jenkins to build and deploy this app in slave pod in GKE cluster* 
 
-###                ______________________________________________________________________________________________
+###                    ______________________________________________________________________________________________
 
 # *Project - Structure*
 
@@ -22,8 +22,8 @@
 - Install Terraform
 - Install Docker
 
-> *First
-# *Build docker image (Slave-image) from docker file*  - Push the image to Docker Hub
+# *First
+> Build docker image (Slave-image) from docker file*  - Push the image to Docker Hub
 
 
 * Build the Docker image  (Slave-image)
@@ -52,11 +52,11 @@ docker push ali3elhabal/slave:latest
 ![Screenshot from 2023-02-22 13-41-07](https://user-images.githubusercontent.com/118537759/220793790-69ba465b-779e-4178-a1f6-f7960ebc2e2c.png)
 
 
-###                ______________________________________________________________________________________________
+###                    ______________________________________________________________________________________________
 
 
->*Second
-# *Run Terraform Files Using This Commands*
+# Second
+> Run Terraform Files Using This Commands*
 ```
 terraform init 
 ```
@@ -77,11 +77,11 @@ terraform apply
 ![Screenshot from 2023-02-23 13-38-19](https://user-images.githubusercontent.com/118537759/220967077-4e26c22a-857a-4505-b0e1-48558e0fc3f4.png)
 
 
-###                ______________________________________________________________________________________________
+###                    ______________________________________________________________________________________________
 
 
->*Third
-# *SSH to controller-vm and follow this steps
+# Third
+> SSH to controller-vm and follow this steps
 
 * installing git
 ```
@@ -147,7 +147,7 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 ![Screenshot from 2023-02-23 14-26-18](https://user-images.githubusercontent.com/118537759/220969548-dd8d4988-d974-45ad-866c-fc1381645d53.png)
 
 
-###                ______________________________________________________________________________________________
+###                    ______________________________________________________________________________________________
 
 
 >*create slave node in jenkins and connect it with slave pod in GKE Cluster
@@ -156,14 +156,14 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 
 ##   ----------------------------------------------------------
 
-*Make sure ssh Connection in slave pod is started 
-*And Authentication is required 
-   -create Credential with user-name (Jenkins) and password
-   -go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
+> Make sure ssh Connection in slave pod is started 
+> And Authentication is required 
+   >> create Credential with user-name (Jenkins) and password
+   >> go shell in slave pod and create passwd for jenkins user (same jenkins Credential password )
    
 ![Screenshot from 2023-02-23 14-40-41](https://user-images.githubusercontent.com/118537759/220974426-c28ed4ca-17a3-4e62-9eb5-63e491817c8f.png)
 
->*craete pipline with this configuration only 
+*'craete pipline with this configuration only' 
 
 ![Screenshot from 2023-02-23 18-58-05](https://user-images.githubusercontent.com/118537759/220976981-3e23cb62-bde4-4c6f-bc40-7325cf7a7bad.png)
 
@@ -171,14 +171,24 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 
 ![Screenshot from 2023-02-23 18-58-22](https://user-images.githubusercontent.com/118537759/220977064-2c22f51c-ea09-4a18-83be-0ebdbd4c6a00.png)
 
-*then build the pipline 
+*'then build the pipline' 
 
 ![Screenshot from 2023-02-23 18-13-59](https://user-images.githubusercontent.com/118537759/220977498-8d4d70f0-6c7f-4b0a-86d8-8039e6787832.png)
 
+> pipline stages
+>> Build 
+>> deploy 
 
+###                    ______________________________________________________________________________________________
+# $${\color{green} finally}$$
 
+* get ip address of app service add brows using it 
 
+![Screenshot from 2023-02-23 19-39-34](https://user-images.githubusercontent.com/118537759/220987058-48327681-22cf-42f3-844b-a8d33b109fd1.png)
 
+# The Deployed App 
+
+![Screenshot from 2023-02-23 18-12-58](https://user-images.githubusercontent.com/118537759/220987261-82bd2d46-b260-4590-815d-34f08e71f1dd.png)
 
 
 # $${\color{green}Thank You}$$
