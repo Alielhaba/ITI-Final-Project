@@ -171,15 +171,44 @@ kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
 
 ![Screenshot from 2023-02-23 18-58-22](https://user-images.githubusercontent.com/118537759/220977064-2c22f51c-ea09-4a18-83be-0ebdbd4c6a00.png)
 
+> Before Build the pipline 
+>> you should go shell in the slave pod and install gcloud SDK to connect to GKE Cluster 
+
+* Run This Commands 
+
+```
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] http://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+
+apt-get update
+
+apt-get install google-cloud-sdk
+
+```
+>Then Switch to jenkins user 
+
+```
+su jenkins
+```
+> connect to GKE Cluster 
+```
+gcloud container clusters get-credentials main-cluster --zone us-east1-b --project ali-elhabal-378620
+```
+
 *'then build the pipline' 
 
 ![Screenshot from 2023-02-23 18-13-59](https://user-images.githubusercontent.com/118537759/220977498-8d4d70f0-6c7f-4b0a-86d8-8039e6787832.png)
+
 
 > pipline stages
 >> Build 
 >>> deploy 
 
+
+
 ###                    ______________________________________________________________________________________________
+
 # $${\color{green} finally}$$
 
 * get ip address of app service add brows using it 
