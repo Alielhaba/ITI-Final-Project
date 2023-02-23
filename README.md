@@ -49,6 +49,49 @@ docker push ali3elhabal/slave:latest
 *Docker Hub Account*
 ![Screenshot from 2023-02-22 13-41-07](https://user-images.githubusercontent.com/118537759/220793790-69ba465b-779e-4178-a1f6-f7960ebc2e2c.png)
 
+
+# Third
+>*SSH to private-vm and follow this steps
+
+* installing git
+```
+sudo apt update  
+```
+```
+sudo apt install git  
+```
+* Run Spec.Script.sh
+```
+bash Spec.Script.sh
+```
+
+* Get deployment files (yaml-files) from my repo 
+```
+git clone git@github.com:Alielhaba/ITI-Final-Project.git
+```
+
+* Connect Controller VM to  GKE Cluster 
+```
+gcloud container clusters get-credentials main-cluster --zone us-east1-b --project ali-elhabal-378620
+```
+* Create Jenkins NameSpace
+```
+kubectl create  namespace jenkins
+```
+* Deploy jenkins and slave files 
+```
+kubectl create -f deployment-files
+```
+
+* Get service IP and Port to brows jenkins
+```
+kubectl get svc
+```
+* Get a shell from jenkins pod to get Administrator Password
+```
+kubectl exec --stdin --tty -n jenkins jenkins-5667d7d786-2qpp2 -- /bin/bash
+```
+
 # $${\color{green}Thank You}$$
 
 
