@@ -1,0 +1,6 @@
+Region = "us-east1"
+zone = "us-east1-b"
+project-id = "ali-elhabal-378620"
+M-type-VM = "e2-medium"
+M-type-Node = "e2-standard-4"
+image = "debian-cloud/debian-11"
